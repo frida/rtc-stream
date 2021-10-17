@@ -1,32 +1,32 @@
 {
-  "name": "@frida/rtc-stream",
-  "version": "1.0.0",
-  "description": "Create a Node.js Duplex stream from a WebSocket or RTCDataChannel",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "/dist/"
-  ],
-  "scripts": {
-    "prepare": "npm run build",
-    "build": "tsc",
-    "watch": "tsc -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/frida/rtc-stream.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/frida/rtc-stream/issues"
-  },
-  "homepage": "https://github.com/frida/rtc-stream#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "@types/node": "^16.11.0",
-    "typescript": "^4.4.4"
-  }
+    "name": "@frida/rtc-stream",
+    "version": "1.0.0",
+    "description": "Create a Node.js Duplex stream from a WebSocket or RTCDataChannel",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "/dist/"
+    ],
+    "scripts": {
+        "prepare": "npm run build",
+        "build": "tsc",
+        "watch": "tsc -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/frida/rtc-stream.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/frida/rtc-stream/issues"
+    },
+    "homepage": "https://github.com/frida/rtc-stream#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.0",
+        "typescript": "^4.4.4"
+    }
 }
