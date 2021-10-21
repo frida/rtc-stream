@@ -1,6 +1,8 @@
 import { Buffer } from "buffer";
 import { Duplex } from "stream";
 
+import { nextTick } from "process";
+
 class RTCStream extends Duplex {
     readonly #handle: WebSocket | RTCDataChannel;
 
@@ -33,6 +35,13 @@ class RTCStream extends Duplex {
         handle.addEventListener("close", this._onClose);
         handle.addEventListener("error", this._onError);
         handle.addEventListener("message", this._onMessage as any);
+
+        const readyState = this.#handle.readyState;
+        if (readyState === this.#openStateValue) {
+            nextTick(this._onOpen);
+        } else if (readyState === this.#closedStateValue) {
+            nextTick(this._onClose);
+        }
     }
 
     private _onOpen = (): void => {
