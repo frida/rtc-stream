@@ -79,7 +79,7 @@ class RTCStream extends Duplex {
     _read(size: number): void {
     }
 
-    _write( chunk: any, encoding: BufferEncoding, callback: WriteCallback): void {
+    _write(chunk: any, encoding: BufferEncoding, callback: WriteCallback): void {
         this._writev([{chunk, encoding}], callback);
     }
 
