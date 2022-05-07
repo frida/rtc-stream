@@ -79,6 +79,10 @@ class RTCStream extends Duplex {
     _read(size: number): void {
     }
 
+    _write(chunk: any, encoding: BufferEncoding, callback: WriteCallback): void {
+        this._writev([{ chunk, encoding }], callback);
+    }
+
     _writev(chunks: { chunk: any, encoding: BufferEncoding }[], callback: WriteCallback): void {
         this.#pendingWriteBuffer = Buffer.concat(chunks.map(({ chunk }) => (typeof chunk === "string") ? Buffer.from(chunk, "utf8") : chunk));
         this.#pendingWriteCallback = callback;
